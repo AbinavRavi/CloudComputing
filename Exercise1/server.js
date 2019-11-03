@@ -91,13 +91,13 @@ app.post('/api/books/', (req, res) => {
    * TODO: use the books model and create a new object
    * with the information in req.body
    */
-  db.books.insertMany(req.body,(err,book) => {
+  db.books.create(req.body,(err,book) => {
     if (err) throw err;
   /*
    * return the new book information object as json
    */
-  // var newBook = book;
-  // res.json(newBook);
+  var newBook = book;
+  res.json(newBook);
   });
 })
 
